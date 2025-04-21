@@ -1,0 +1,50 @@
+                                        SUMMARIZING YOUR DATA
+  1. The script.py file imports a data frame. Before you start making a histogram, it’s important to understand the shape of your data. Use the following code to print your data:
+print(transactions). Run your code. Scroll to the top of the output panel to see the column names, and values in the columns. Can you identify some maximums and minimums in each column?
+//
+print(transactions)                                  RESULT:               Transaction Time        Cost
+                                                              0            7.939419                98.422021
+                                                              1            4.314811                87.329861
+                                                              2            6.394080                112.334882
+                                                              3            7.031504                87.570689
+                                                              4            5.840730                97.321191
+                                                              ..                ...                     ...
+                                                              995          18.728278               34.802198
+                                                              996          18.183858               36.349422
+                                                              997          16.803236               59.230032
+                                                              998          19.680992               23.748946
+                                                              999          23.369355               57.442948
+   2. Use the following code to find the average time that a person arrives at the grocery store: print(np.average(times)). The Transaction Time column contains numbers between 0 and 
+<24. The number 0 is 12:00am. You can think of <24 as just before midnight the next day, or 11:59pm. You should find that the average time is 14.9, which is close to 3pm. We calculated 
+this by subtracting 12 from 14.9, which is close to 3pm. This doesn’t make much sense to the manager, because they know their busiest times of the day are after 6pm, as many customers 
+stop by on their way home from work.
+//
+print(np.average(times))                             RESULT:  14.943439668312365
+
+                                        RANGE
+  3. Find the minimum transaction time and save it to min_time.
+//
+min_time = np.amin(times)                            RESULT: Earliest Time: 0.02661518360957871
+  4. Find the maximum transaction time and save it to max_time.
+//
+max_time = np.amax(times)                            RESULT: Latest Time: 23.675374635328755
+  5. Find the range, and save it to range_time.
+//
+range_time = max_time - min_time                     RESULT: Time Range: 23.648759451719176
+
+                                        BINS AND COUNT I
+  6. In script.py, there is an array called days_old_bread that contains values for the age of different loaves of bread in the grocery store. Find the minimum value of the array and 
+save it to min_days_old.
+//
+min_days_old = np.amin(days_old_bread)
+  7. Find the maximum value of the array and save it to max_days_old.
+//
+max_days_old = np.amax(days_old_bread)
+  8. Set the variable bins equal to 3. When you run the code, it will output the number of bins for this histogram, and the width of these bins. In the next exercise, we’ll figure out 
+which values fall into each bin. At the bottom of script.py, we calculate the bin width by subtracting min_days_old from max_days_old, adding one, then dividing by three. We must add 
+one because there are nine possible answers from zero to eight.
+//
+bins=3                                                RESULT: Bins: 3
+                                                              Bin Width: 3.0
+
+                                        BINS AND COUNT II
