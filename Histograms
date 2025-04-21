@@ -48,3 +48,33 @@ bins=3                                                RESULT: Bins: 3
                                                               Bin Width: 3.0
 
                                         BINS AND COUNT II
+GIVEN:
+# Import packages
+import numpy as np
+import pandas as pd
+# Array of days old bread
+days_old_bread = np.array([0, 8, 7, 8, 0, 2, 3, 5, 6, 2])
+# Count the values in each bin 
+days_old_012 = 0
+days_old_345 = 0
+days_old_678 = 0
+# Printing the values
+print("Between 0 and 2 days: " + str(days_old_012))
+print("Between 3 and 5 days: " + str(days_old_345))
+print("Between 6 and 8 days: " + str(days_old_678))
+  9. The store manager checks the age of all loaves on the shelves every three days, with the freshest loaves displayed on the most obvious shelf, and the oldest loaves being thrown 
+out. Because of this pattern, the store manager wants to know the number of loaves in each of three different bins. Count the number of loaves that have values of 0, 1, or 2, and save 
+it to days_old_012.
+//
+Calculating                                            RESULT: "Between 0 and 2 days: 4"
+days_old_012 = 4
+  10. Count the number of loaves that have values of 3, 4, or 5, and save it to days_old_345.
+//
+Calculating                                            RESULT: "Between 3 and 5 days: 2"
+days_old_345 = 2
+  11. Count the number of loaves that have values of 6, 7, or 8, and save it to days_old_678.
+//
+Calculating                                            RESULT: "Between 6 and 8 days: 4"
+days_old_678 = 4
+
+                                        B
