@@ -77,4 +77,76 @@ days_old_345 = 2
 Calculating                                            RESULT: "Between 6 and 8 days: 4"
 days_old_678 = 4
 
-                                        B
+                                        HISTOGRAMS
+GIVEN:
+# Import packages
+import numpy as np
+import pandas as pd
+# Read in transactions data
+transactions = pd.read_csv("transactions.csv")
+# Save transaction times to a separate numpy array
+times = transactions["Transaction Time"].values
+# Use numpy.histogram() below
+times_hist = 0
+print(times_hist)
+  12. Use the np.histogram() function to determine the busiest six hours of the day. Save the result to times_hist on line 12. Use the following range and number of bins.
+Range: 0 to 24, Bins: 4. Can you determine which six-hour period is the busiest? Check the hint if you need help, or want to see the correct answer.
+//
+times_hist = np.histogram(times, range = (0, 24), bins = 4)
+print(times_hist)                                      RESULT: (array([101, 231, 213, 455]), array([ 0.,  6., 12., 18., 24.]))
+
+                                        PLOTTING A HISTOGRAM
+  13. At the top of script.py, we’ve imported codecademylib3, which is a package that Codecademy uses to plot your histogram in the panel to the right. Don’t worry about this library. 
+Any Python development environment that you may use will take care of this for you. From matplotlib, import pyplot as plt.
+//
+from matplotlib import pyplot as plt
+  14. Use the plt.hist() function to create a plot for each six-hour period in a day. Use the following range and number of bins. Range: 0 to 24, Bins: 4.
+//
+# Use plt.hist() below
+plt.hist(times, range=(0,24), bins=4)
+  15. Use plt.show() to show the figure. Feel free to add a title, x-label, and y-label if you want. You can copy the code from the hint as an example.
+//
+# Use plt.hist() below
+plt.hist(times, range=(0,24), bins=4)
+plt.show()
+
+                                        FINDING YOUR BEST BIN SIZE
+GIVEN:
+# Import packages
+import codecademylib
+import numpy as np
+import pandas as pd
+from matplotlib import pyplot as plt
+# Read in transactions data
+transactions = pd.read_csv("transactions.csv")
+# Save transaction times to a separate numpy array
+times = transactions["Transaction Time"].values
+# Use plt.hist() below
+plt.hist(times, range=(0, 24), bins=4,  edgecolor="black")
+plt.title("Weekday Frequency of Customers")
+plt.xlabel("Hours (1 hour increments)")
+plt.ylabel("Count")
+plt.show()
+  16. Change the number of bins in your code from 4 to 24. What do you notice about the data? Given this new graph, when would you recommend staffing the grocery store? Check the 
+hint to see what we thought.
+//
+...
+plt.hist(times, range=(0, 24), bins=24,  edgecolor="black")
+...
+
+                                        REVIEW
+  17. Now, the store manager wants a histogram of transaction costs. Try plotting a histogram for the cost variable. Some things to think about:
+What is a reasonable minimum for transaction data? Maybe 0 dollars.
+What is a reasonable maximum for the transaction data? Using np.amax(cost), we get 161.4. So, you could make the maximum 165.
+How many bins should you use to adequately represent the data? Do some guess and check work to figure this out.
+Finally, think about how this data could be useful to the store manager.
+//
+plt.hist(cost, range=(0,np.amax(cost)), bins=6)
+plt.show() 
+OR
+plt.hist(cost, range=(0,np.amax(cost)), bins=16)
+plt.show()
+OR
+plt.hist(cost, range=(0,np.amax(cost)), bins=36)
+plt.show()
+...
