@@ -1,1 +1,37 @@
+Your goal is to create two histograms, each displaying the frequency of an occurrence each day of the year (either flights or flower blooms).
+You will use the in_bloom variable to find a count of the number of flowers that start blooming each day of the year.
+You will use the flights variable to find a count of the number of flights that occur each day of the year
+GIVEN:
+# import codecademylib3
+import codecademylib3
+import numpy as np
+from matplotlib import pyplot as plt
+# load in data
+in_bloom = np.loadtxt(open("in-bloom.csv"), delimiter=",")
+flights = np.loadtxt(open("flights.csv"), delimiter=",")
+# Plot the histograms
+plt.show()
 
+                                          Making a Histogram
+  1. Use Matplotlib to create a flights histogram.
+//
+plt.hist(flights)
+plt.show()
+  2. If you haven’t done so already, set the range of your histogram to (0, 365)
+//
+plt.hist(flights, range(0,365))
+plt.show()
+  3. Set the number of bins in your plot to 365, so you have a separate bin for each day of the year.
+//
+plt.hist(flights, range(0,365), bins=365)
+plt.show()
+  4. Add an x-label, y-label, and title to your figure.
+//
+plt.hist(flights, range(0,365), bins=365, edgecolor="black")
+plt.title("Title", fontsize=24)
+plt.xlabel("xLabel", fontsize=18)
+plt.ylabel("yLabel", fontsize=18)
+plt.show()
+
+                                          Multiple Plots
+  5. 
